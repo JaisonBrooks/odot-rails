@@ -53,7 +53,7 @@ describe 'Creating TODO LISTS' do
     
     expect(TodoList.count).to eq(0)
     
-    create_todo_list description: ''
+    create_todo_list title: 'Some Title', description: ''
     
     expect(page).to have_content('error')
     expect(TodoList.count).to eq(0)
@@ -67,7 +67,7 @@ describe 'Creating TODO LISTS' do
     
     expect(TodoList.count).to eq(0)
     
-    create_todo_list description: 'foo'
+    create_todo_list title: 'A todo title', description: 'foo'
     
     expect(page).to have_content('error')
     expect(TodoList.count).to eq(0)
