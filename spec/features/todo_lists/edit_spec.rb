@@ -38,6 +38,9 @@ describe 'Edit todo lists' do
   
   it 'display an error with no title' do
     update_todo_list todo_list: todo_list, title: ''
+    title = todo_list.title
+    todo_list.reload
+    expect(todo_list.title).to eq(title)
     expect(page).to have_content('error')
   end
   
@@ -48,6 +51,9 @@ describe 'Edit todo lists' do
   
   it 'display an error with no descrption' do
     update_todo_list todo_list: todo_list, description: ''
+    description = todo_list.description
+    todo_list.reload
+    expect(todo_list.description).to eq(description)
     expect(page).to have_content('error')
   end
   
