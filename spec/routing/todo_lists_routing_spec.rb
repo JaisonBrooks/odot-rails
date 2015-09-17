@@ -6,7 +6,7 @@ describe TodoListsController do
     it "routes to #index" do
       get("/todo_lists").should route_to("todo_lists#index")
     end
-
+    
     it "routes to #new" do
       get("/todo_lists/new").should route_to("todo_lists#new")
     end
